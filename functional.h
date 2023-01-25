@@ -1,8 +1,23 @@
-//
-// Created by mn438628 on 24.01.23.
-//
-
 #ifndef IMAGES_FUNCTIONAL_H
 #define IMAGES_FUNCTIONAL_H
+
+#include <bits/stdc++.h>
+
+inline auto compose()
+{
+    return [=](auto x) { return x; };
+}
+
+template<typename F, typename ... Args>
+auto compose(F f, Args ... args)
+{
+    return [=](auto x) { return compose(args ...)(f(x)); };
+}
+
+template<typename H, typename ... Fs>
+auto lift(H h, Fs ... fs)
+{
+    return [=](auto a) { return h(fs(a) ...); };
+}
 
 #endif //IMAGES_FUNCTIONAL_H

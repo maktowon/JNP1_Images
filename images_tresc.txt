@@ -3,11 +3,11 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 W pewnych zastosowaniach znacznie lepszą od klasycznych bitmap, opisujących wy-
-gląd każdego piksela,  jest grafika wektorowa.  Jej ideą jest opisywanie obrazu
-za pomocą obiektów matematycznych,  np. wektorów lub krzywych,  które można do-
+gląd każdego piksela, jest grafika wektorowa.  Jej ideą jest opisywanie obrazu
+za pomocą obiektów matematycznych, np. wektorów lub krzywych, które można do-
 wolnie skalować i łatwo aplikować na nich pewne przekształcenia.
 
-Jeszcze  bardziej  uogólnioną koncepcją  obrazu są  tzw. obrazy funkcyjne (ang.
+Jeszcze bardziej uogólnioną koncepcją obrazu są tzw. obrazy funkcyjne (ang.
 functional images), które są funkcjami R^2 -> A, gdzie A w szczególnym przypad-
 ku może być zbiorem kolorów.
 
@@ -23,23 +23,23 @@ W katalogu z treścią zadania zostały udostępnione następujące pliki:
 Zadanie polega na stworzeniu plików o nazwach:
   images.h (oraz opcjonalnie images.cc),
   functional.h (oraz opcjonalnie functional.cc),
-których zawartość jest streszczona poniżej  i dokładniej opisana w dalszej czę-
+których zawartość jest streszczona poniżej i dokładniej opisana w dalszej czę-
 ści zadania.
 
   images.*  - biblioteka implementująca obrazy funkcyjne.
 
-  functional.* – pomocnicza biblioteka  implementująca  pewne konstrukcje znane
+  functional.* – pomocnicza biblioteka implementująca pewne konstrukcje znane
   z języków funkcyjnych.
 
                                       * * *
 
-Plik(i) images.* powinien/powinny definiować typy,  szablony funkcji oraz funk-
+Plik(i) images.* powinien/powinny definiować typy, szablony funkcji oraz funk-
 cje opisane poniżej.
 
   Typy:
 
-    Fraction: typ zmiennoprzecinkowy kompatybilny  z std::is_floating_point ob-
-    sługujący liczby z zakresu [0, 1].  Ten typ  może zostać zdefiniowany  jako
+    Fraction: typ zmiennoprzecinkowy kompatybilny z std::is_floating_point ob-
+    sługujący liczby z zakresu [0, 1].  Ten typ może zostać zdefiniowany jako
     alias na jeden z typów fundamentalnych.
 
     Base_image: szablon aliasu na std::function o następującej definicji:
@@ -47,7 +47,7 @@ cje opisane poniżej.
       using Base_image = std::function<T(const Point)>;
     Base_image jest nazywany dalej obrazem bazowym.
 
-    Region:  równoważny Base_image<bool>.  Region (przez duże R)  jest nazywany
+    Region: równoważny Base_image<bool>.  Region (przez duże R) jest nazywany
     dalej regionem lub wycinanką. Regiony służą do składania obrazów właściwych
     (zob. poniżej), np. z użyciem funkcji cond opisanej niżej.
 
@@ -66,10 +66,10 @@ cje opisane poniżej.
       Vermilion lub
     - wartość 0,42 w przypadku mieszanki dla t == 0.42.
     Uwaga: Sformułowania typu „Base_image<T> constant(T t)” należy rozumieć ja-
-           ko  szablon funkcji parametryzowany  zmienną typową T,  przyjmującej
-           argument typu równemu jednemu  z następujących  (należy wybrać samo-
-           dzielnie): const T, const T&, T  i zwracający typ Base_image<T>.  Ta
-           uwaga  dotyczy  wszystkich  szablonów  funkcji oraz,  przez analogię
+           ko szablon funkcji parametryzowany zmienną typową T, przyjmującej
+           argument typu równemu jednemu z następujących (należy wybrać samo-
+           dzielnie): const T, const T&, T i zwracający typ Base_image<T>.  Ta
+           uwaga dotyczy wszystkich szablonów funkcji oraz, przez analogię
            w zakresie typu przyjmowanego, samych funkcji.
 
     Base_image<T> rotate(Base_image<T> image, double phi) – obraca obraz bazowy
@@ -77,25 +77,25 @@ cje opisane poniżej.
     wie pliku rotate.bmp.
 
     Base_image<T> translate(Base_image<T> image, Vector v) – przesuwa obraz ba-
-    zowy o wektor v.  Kierunek przesunięcia  można określić  na podstawie pliku
+    zowy o wektor v.  Kierunek przesunięcia można określić na podstawie pliku
     translate.bmp.
 
-    Base_image<T> scale(Base_image<T> image, double s) – skaluje  obraz  bazowy
+    Base_image<T> scale(Base_image<T> image, double s) – skaluje obraz bazowy
     o współczynnik s.  Dla s == 2 otrzymuje się obraz bazowy dwukrotnie powięk-
     szony.
 
-    Base_image<T> circle(Point q, double r, T inner, T outer) –  tworzy   obraz
+    Base_image<T> circle(Point q, double r, T inner, T outer) – tworzy obraz
     bazowy koła o środku q, promieniu r oraz zwracanych wartościach inner w ko-
     le i na obwodzie oraz outer poza nim.
 
-    Base_image<T> checker(double d, T this_way, T that_way) – tworzy  obraz ba-
+    Base_image<T> checker(double d, T this_way, T that_way) – tworzy obraz ba-
     zowy szachownicy o szerokości kratki d oraz zwracanych wartościach zadanych
     przez pozostałe dwa argumenty. Położenie this_way i that_way należy wydedu-
     kować na podstawie plików example.cc oraz checker.bmp.
 
     Base_image<T> polar_checker(double d, int n, T this_way, T that_way) – two-
-    rzy obraz bazowy „szachownicy biegunowej”.  W implementacji  należy odwołać
-    się do zdefiniowanej wcześniej funkcji checker  i przekazać jej argument d.
+    rzy obraz bazowy „szachownicy biegunowej”.  W implementacji należy odwołać
+    się do zdefiniowanej wcześniej funkcji checker i przekazać jej argument d.
     Znaczenie parametru n oraz położenie this_way i that_way należy wydedukować
     na podstawie plików example.cc  oraz  polar_checker.bmp.  Można założyć, że
     użytkownik będzie wywoływać funkcję z argumentem n o parzystej wartości.
@@ -164,7 +164,7 @@ sane poniżej.
                   h                  f1                  fn
       ...
 
-      Celem  wyjaśnienia   bardziej  szczegółowo  zostanie   opisany  przypadek
+      Celem wyjaśnienia bardziej szczegółowo zostanie opisany przypadek
       lift(h, f1, f2)
         (a -> b -> g) -> (p -> a) -> (p -> b) -> (p -> g)
               h             f1          f2
@@ -180,15 +180,15 @@ sane poniżej.
 
                                       * * *
 
-W implementacji  ww. funkcji i szablonów funkcji  należy  wykorzystywać funkcje
+W implementacji ww. funkcji i szablonów funkcji należy wykorzystywać funkcje
 lambda języka C++.  W kodzie źródłowym images.* należy z kolei korzystać z sym-
 boli zdefiniowanych w functional.*.
-Nie należy korzystać  z instrukcji if oraz if–else.  W zamian za to można wyko-
+Nie należy korzystać z instrukcji if oraz if–else.  W zamian za to można wyko-
 rzystać operator ternarny: warunek_logiczny ? a : b.
 Dodatkowe symbole (funkcje, struktury...) mogą się znaleźć  w pomocniczej prze-
 strzeni nazw Detail.
 
-Przykład użycia programu  można znaleźć  w pliku example.cc oraz w plikach gra-
+Przykład użycia programu można znaleźć w pliku example.cc oraz w plikach gra-
 ficznych wygenerowanych przez example.cc.
 
 Rozwiązanie będzie kompilowane z użyciem polecenia:
