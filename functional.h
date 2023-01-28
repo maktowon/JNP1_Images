@@ -3,7 +3,7 @@
 
 #include <bits/stdc++.h>
 
-inline auto compose()
+template<typename F = nullptr_t> auto compose()
 {
     return [=](auto x) { return x; };
 }
