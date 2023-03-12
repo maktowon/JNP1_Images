@@ -187,24 +187,3 @@ Nie należy korzystać z instrukcji if oraz if–else.  W zamian za to można wy
 rzystać operator ternarny: warunek_logiczny ? a : b.
 Dodatkowe symbole (funkcje, struktury...) mogą się znaleźć  w pomocniczej prze-
 strzeni nazw Detail.
-
-Przykład użycia programu można znaleźć w pliku example.cc oraz w plikach gra-
-ficznych wygenerowanych przez example.cc.
-
-Rozwiązanie będzie kompilowane z użyciem polecenia:
-  g++ -Wall -Wextra -pedantic -O2 -std=c++20
-
-                                      * * *
-
-Rozwiązanie powinno zawierać pliki:
-  images.h,
-  images.cc (opcjonalnie),
-  functional.h,
-  functional.cc (opcjonalnie),
-które należy umieścić w repozytorium w katalogu
-  grupaN/zadanie7/ab123456
-gdzie N jest numerem grupy, a ab123456 jest identyfikatorem autora umieszczają-
-cego to rozwiązanie.  Katalog  z rozwiązaniem nie powinien zawierać innych pli-
-ków. Nie wolno umieszczać w repozytorium plików dużych, binarnych, tymczasowych
-(np. *.o) ani innych zbędnych. W szczególności do rozwiązania nie należy  dołą-
-czać plików graficznych (*.bmp).
